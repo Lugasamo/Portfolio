@@ -1,6 +1,16 @@
 <!DOCTYPE html>
-<html "en">
+<html lang="en">
     <head>
+        <!-- Google Tag Manager -->
+        <script>
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-NW7ZMCHH');
+        </script>
+        <!-- End Google Tag Manager -->
+
                     <meta charset="utf-8" />
 
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,110 +19,190 @@
             <meta name="mobile-web-app-capable" content="yes">
             <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
+            <script>
+              (function () {
+                function scheduledTheme() {
+                  var hour = new Date().getHours();
+                  return hour >= 18 || hour < 6 ? 'dark' : 'light';
+                }
+
+                function applyScheduledTheme() {
+                  try {
+                    var manualTheme = sessionStorage.getItem('portfolio-theme');
+                    var theme = manualTheme || scheduledTheme();
+                    if (document.documentElement.dataset.theme !== theme) {
+                      document.documentElement.dataset.theme = theme;
+                      window.dispatchEvent(new CustomEvent('portfolio-theme-change', {
+                        detail: { theme: theme }
+                      }));
+                    }
+                  } catch (error) {
+                    document.documentElement.dataset.theme = scheduledTheme();
+                  }
+                }
+
+                window.portfolioTheme = {
+                  scheduledTheme: scheduledTheme,
+                  applyScheduledTheme: applyScheduledTheme
+                };
+
+                try {
+                  document.documentElement.dataset.theme =
+                    sessionStorage.getItem('portfolio-theme') || scheduledTheme();
+                } catch (error) {
+                  document.documentElement.dataset.theme = scheduledTheme();
+                }
+
+                window.setInterval(applyScheduledTheme, 60000);
+              })();
+            </script>
+
             <!-- templates/assets -->
-            <link rel="apple-touch-icon" href="/user/themes/portfolio-luis/templates/assets/icon-192x192.png">
-            <link rel="icon" type="image/png" sizes="32x32" href="/user/themes/portfolio-luis/templates/assets/favicon-32x32.png">
-            <link rel="icon" type="image/png" sizes="16x16" href="/user/themes/portfolio-luis/templates/assets/favicon-16x16.png">
-            <link rel="apple-touch-icon" sizes="180x180" href="/user/themes/portfolio-luis/templates/assets/apple-touch-icon.png">
+            <link rel="icon" type="image/svg+xml" href="/user/themes/portfolio-luis/images/ls-logo.svg?v=20260717-2">
+            <link rel="icon" type="image/png" sizes="32x32" href="/user/themes/portfolio-luis/templates/assets/favicon-32x32.png?v=20260717-2">
+            <link rel="icon" type="image/png" sizes="16x16" href="/user/themes/portfolio-luis/templates/assets/favicon-16x16.png?v=20260717-2">
+            <link rel="apple-touch-icon" sizes="180x180" href="/user/themes/portfolio-luis/templates/assets/apple-touch-icon.png?v=20260717-2">
 
-            <title>Amber Tiles | Luis Saavedra</title>
-
-            <link rel="canonical" href="/amber-tiles" />
+                        <title>Amber Tiles Ecommerce UX Case Study — Luis Saavedra</title>
             <link rel="preload" href="/user/themes/portfolio-luis/fonts/SCHABO-Condensed.woff2" as="font" type="font/woff2" crossorigin>
-            <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Barlow:wght@600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-            <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Barlow:wght@600;700;800&display=swap"></noscript>
-	                                    <link href="/user/themes/portfolio-luis/css/portfolio.css" rel="stylesheet">
+            <link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+            <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap"></noscript>
+	                                    <link href="/user/themes/portfolio-luis/css/output.css" rel="stylesheet">
+            <link href="/user/themes/portfolio-luis/css/components.css" rel="stylesheet">
                         
-<meta name="description" content="&lt;p&gt;Amber Tiles’ 40-year retail legacy made them a household name in Australia—but they saw untapped potential in e-commerce. To rival major online players and engage a broader audience, they needed a digital experience as trusted as their stores.&lt;/p&gt;
-&lt;p&gt;I led the redesign of their Adobe Commerce platform to turn this vision in...&lt;/p&gt;">
-<meta name="keywords" content="diseño ui/ux, portfolio, diseñador web, experiencia usuario, interfaz usuario">
-<meta name="author" content="Luis Saavedra Portfolio">
+<meta name="description" content="An&#x20;ecommerce&#x20;UX&#x20;redesign&#x20;connecting&#x20;Amber&#x20;Tiles&#x2019;&#x20;showroom&#x20;service&#x20;with&#x20;location-aware&#x20;pricing,&#x20;clearer&#x20;discovery&#x20;and&#x20;scalable&#x20;UI&#x20;components.">
+<meta name="author" content="Luis&#x20;Saavedra">
+<meta name="robots" content="index,&#x20;follow,&#x20;max-image-preview&#x3A;large,&#x20;max-snippet&#x3A;-1,&#x20;max-video-preview&#x3A;-1">
+<meta name="googlebot" content="index,&#x20;follow,&#x20;max-image-preview&#x3A;large,&#x20;max-snippet&#x3A;-1,&#x20;max-video-preview&#x3A;-1">
+<link rel="canonical" href="https&#x3A;&#x2F;&#x2F;saavedral.au&#x2F;amber-tiles">
 
 <meta property="og:type" content="article">
-<meta property="og:url" content="/amber-tiles">
-<meta property="og:title" content="Amber Tiles | Luis Saavedra">
-<meta property="og:description" content="&lt;p&gt;Amber Tiles’ 40-year retail legacy made them a household name in Australia—but they saw untapped potential in e-commerce. To rival major online players and engage a broader audience, they needed a digital experience as trusted as their stores.&lt;/p&gt;
-&lt;p&gt;I led the redesign of their Adobe Commerce platform to turn this vision in...&lt;/p&gt;">
-<meta property="og:image" content="">
-<meta property="og:site_name" content="Luis Saavedra">
-<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="https&#x3A;&#x2F;&#x2F;saavedral.au&#x2F;amber-tiles">
+<meta property="og:title" content="Amber&#x20;Tiles&#x20;Ecommerce&#x20;UX&#x20;Case&#x20;Study&#x20;&#x2014;&#x20;Luis&#x20;Saavedra">
+<meta property="og:description" content="An&#x20;ecommerce&#x20;UX&#x20;redesign&#x20;connecting&#x20;Amber&#x20;Tiles&#x2019;&#x20;showroom&#x20;service&#x20;with&#x20;location-aware&#x20;pricing,&#x20;clearer&#x20;discovery&#x20;and&#x20;scalable&#x20;UI&#x20;components.">
+<meta property="og:image" content="https&#x3A;&#x2F;&#x2F;saavedral.au&#x2F;user&#x2F;pages&#x2F;02.projects&#x2F;04.amber-tiles&#x2F;amber-tiles.jpg&#x3F;g-0d78c6bc">
+<meta property="og:image:alt" content="Amber&#x20;Tiles&#x20;ecommerce&#x20;UX&#x20;and&#x20;UI&#x20;case&#x20;study">
+<meta property="og:site_name" content="Luis&#x20;Saavedra">
+<meta property="og:locale" content="en_AU">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="/amber-tiles">
-<meta name="twitter:title" content="Amber Tiles | Luis Saavedra">
-<meta name="twitter:description" content="&lt;p&gt;Amber Tiles’ 40-year retail legacy made them a household name in Australia—but they saw untapped potential in e-commerce. To rival major online players and engage a broader audience, they needed a digital experience as trusted as their stores.&lt;/p&gt;
-&lt;p&gt;I led the redesign of their Adobe Commerce platform to turn this vision in...&lt;/p&gt;">
-<meta name="twitter:image" content="">
+<meta name="twitter:title" content="Amber&#x20;Tiles&#x20;Ecommerce&#x20;UX&#x20;Case&#x20;Study&#x20;&#x2014;&#x20;Luis&#x20;Saavedra">
+<meta name="twitter:description" content="An&#x20;ecommerce&#x20;UX&#x20;redesign&#x20;connecting&#x20;Amber&#x20;Tiles&#x2019;&#x20;showroom&#x20;service&#x20;with&#x20;location-aware&#x20;pricing,&#x20;clearer&#x20;discovery&#x20;and&#x20;scalable&#x20;UI&#x20;components.">
+<meta name="twitter:image" content="https&#x3A;&#x2F;&#x2F;saavedral.au&#x2F;user&#x2F;pages&#x2F;02.projects&#x2F;04.amber-tiles&#x2F;amber-tiles.jpg&#x3F;g-0d78c6bc">
+<meta name="twitter:image:alt" content="Amber&#x20;Tiles&#x20;ecommerce&#x20;UX&#x20;and&#x20;UI&#x20;case&#x20;study">
 
-<meta name="robots" content="index, follow">
-<meta name="googlebot" content="index, follow">
-
-<meta name="language" content="Spanish">
-<meta name="geo.region" content="ES">
-
-<meta name="theme-color" content="#3B82F6">
-<meta name="msapplication-TileColor" content="#3B82F6">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Luis Saavedra">
+<meta name="theme-color" content="#32F191">
+<meta name="msapplication-TileColor" content="#151A1F">
+<meta name="apple-mobile-web-app-title" content="Luis&#x20;Saavedra">
+<meta name="geo.region" content="AU-VIC">
+<meta name="geo.placename" content="Melbourne">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Luis Saavedra",
-  "url": "/amber-tiles",
-  "description": "&lt;p&gt;Amber Tiles’ 40-year retail legacy made them a household name in Australia—but they saw untapped potential in e-commerce. To rival major online players and engage a broader audience, they needed a digital experience as trusted as their stores.&lt;/p&gt;
-&lt;p&gt;I led the redesign of their Adobe Commerce platform to turn this vision in...&lt;/p&gt;",
-    "isPartOf": {
-    "@type": "WebSite",
-    "name": "Luis Saavedra",
-    "url": ""
-  },
-  "author": {
-    "@type": "Person",
-    "name": "Luis Saavedra Portfolio"
-  }
-    ,"datePublished": "2025-08-19T01:01:42+10:00"
-      ,"dateModified": "2025-08-19T01:01:42+10:00"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https:\/\/saavedral.au\/#website",
+      "url": "https:\/\/saavedral.au\/",
+      "name": "Luis Saavedra",
+      "description": "Luis Saavedra is a Melbourne-based digital product designer specialising in UX, UI, ecommerce, accessible interfaces and scalable design systems.",
+      "inLanguage": "en-AU"
+    },
+    {
+      "@type": "Person",
+      "@id": "https:\/\/saavedral.au\/#person",
+      "name": "Luis Saavedra",
+      "url": "https:\/\/saavedral.au\/",
+      "image": "https:\/\/saavedral.au\/user\/pages\/02.projects\/04.amber-tiles\/amber-tiles.jpg?g-0d78c6bc",
+      "jobTitle": "Digital Product Designer",
+      "sameAs": [
+        "https://www.linkedin.com/in/luis-g-saavedra/",
+        "https://github.com/Lugasamo"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Melbourne",
+        "addressRegion": "VIC",
+        "addressCountry": "AU"
+      },
+      "knowsAbout": [
+        "Digital product design",
+        "User experience design",
+        "User interface design",
+        "Ecommerce design",
+        "Design systems",
+        "Accessibility",
+        "Frontend development"
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https:\/\/saavedral.au\/amber-tiles#webpage",
+      "url": "https:\/\/saavedral.au\/amber-tiles",
+      "name": "Amber Tiles Ecommerce UX Case Study \u2014 Luis Saavedra",
+      "description": "An ecommerce UX redesign connecting Amber Tiles\u2019 showroom service with location-aware pricing, clearer discovery and scalable UI components.",
+      "inLanguage": "en-AU",
+      "isPartOf": {"@id": "https:\/\/saavedral.au\/#website"},
+      "author": {"@id": "https:\/\/saavedral.au\/#person"},
+      "image": "https:\/\/saavedral.au\/user\/pages\/02.projects\/04.amber-tiles\/amber-tiles.jpg?g-0d78c6bc"
     }
+  ]
+}
 </script>
-
             <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
             </head>
     <body class="delay-[50ms] duration-[1000ms] taos:opacity-0">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NW7ZMCHH"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
                 <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary-50 text-white px-4 py-2 rounded-md z-50">Skip to main content</a>
 
-                    
+        <div class="site-page">
+                            
 <header class="p-site pb-0 pt-0 sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-200/50 transition-all duration-300" id="header">
     <nav aria-label="Main navigation">
-        <div class="flex justify-between items-center py-2">
-                        <div class="flex-shrink-0">
-                
-                <a href="" class="group">
-                <img src="/user/themes/portfolio-luis/images/ls-logo.svg"
-                    alt="Luis Saavedra personal brand"
-                    class="size-10 sm:size-12 md:size-16 lg:size-20 w-auto transition-transform duration-200 group-hover:scale-105">
+        <div class="site-header__row">
+                        <div class="site-brand">
+                <a href="/" class="site-brand__link group" aria-label="Luis Saavedra — Home">
+                    <img src="/user/themes/portfolio-luis/images/ls-logo.svg"
+                        alt=""
+                        class="site-brand__logo transition-transform duration-200 group-hover:scale-105">
+                    <span class="site-brand__copy">
+                        <strong>Luis Saavedra</strong>
+                        <span>Digital Product Designer</span>
+                    </span>
                 </a>
-
             </div>
 
-                        <div class="space-x-8 hidden lg:flex">
-                                                        <a href="/" 
-                        class="hover-underline text-black after:bottom-0 after:h-1px after:w-full after:bg-primary-100;"
+                        <div class="desktop-nav hidden lg:flex">
+                                <a href="/"
+                    class="desktop-nav__link "
+                    >
+                    About
+                </a>
+                                                        <a href="/projects" 
+                        class="desktop-nav__link is-active"
                         aria-current="page">
                         Projects
                     </a>
                                                         <a href="/experience" 
-                        class="hover-underline "
+                        class="desktop-nav__link "
                         >
                         Experience
                     </a>
                             </div>
 
-                        <div class="flex-shrink-0 hidden lg:flex">
+                        <div class="header-actions flex-shrink-0 hidden lg:flex">
+                <button type="button" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">
+                    <span class="theme-toggle__thumb" aria-hidden="true"></span>
+                    <svg class="theme-toggle__sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="3.25"/><path d="M12 2.25v2M12 19.75v2M5.1 5.1l1.4 1.4M17.5 17.5l1.4 1.4M2.25 12h2M19.75 12h2M5.1 18.9l1.4-1.4M17.5 6.5l1.4-1.4"/></svg>
+                    <svg class="theme-toggle__moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.8 14.1A7.8 7.8 0 0 1 9.9 4.2a8.1 8.1 0 1 0 9.9 9.9Z"/><path d="m17.7 3.1.45 1.1 1.1.45-1.1.45-.45 1.1-.45-1.1-1.1-.45 1.1-.45.45-1.1Z"/></svg>
+                </button>
                                 <a href="/contact" 
-                    class="btn btn-lg btn-primary bg-black text-white">
+                    class="site-cta site-cta--primary">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                     </svg>
@@ -123,7 +213,12 @@
                 </a>
             </div>
 
-                        <div class="lg:hidden">
+                        <div class="header-actions lg:hidden">
+                <button type="button" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">
+                    <span class="theme-toggle__thumb" aria-hidden="true"></span>
+                    <svg class="theme-toggle__sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="3.25"/><path d="M12 2.25v2M12 19.75v2M5.1 5.1l1.4 1.4M17.5 17.5l1.4 1.4M2.25 12h2M19.75 12h2M5.1 18.9l1.4-1.4M17.5 6.5l1.4-1.4"/></svg>
+                    <svg class="theme-toggle__moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.8 14.1A7.8 7.8 0 0 1 9.9 4.2a8.1 8.1 0 1 0 9.9 9.9Z"/><path d="m17.7 3.1.45 1.1 1.1.45-1.1.45-.45 1.1-.45-1.1-1.1-.45 1.1-.45.45-1.1Z"/></svg>
+                </button>
                 <button onclick="toggleMobileMenu()"
                         id="mobile-menu-button"
                         class="mobile-menu-button"
@@ -141,7 +236,14 @@
                 <div id="mobile-menu" 
                 style="display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; border-top: 1px solid #e5e7eb; box-shadow: 0 10px 25px rgba(0,0,0,0.1); z-index: 1000; padding: 16px;">
             
-                                                        <a href="/" 
+                        <a href="/"
+                onclick="closeMobileMenu()"
+                class="mobile-menu-link"
+                style="display: block; padding: 12px 16px; color: #374151; text-decoration: none; border-radius: 6px; margin-bottom: 4px; transition: all 0.2s ease;"
+                >
+                About
+            </a>
+                                            <a href="/projects" 
                     onclick="closeMobileMenu()"
                     class="mobile-menu-link"
                     style="display: block; padding: 12px 16px; color: #374151; text-decoration: none; border-radius: 6px; margin-bottom: 4px; transition: all 0.2s ease;"
@@ -158,7 +260,7 @@
             
             <a href="/contact" 
                 onclick="closeMobileMenu()"
-                class="mobile-contact-btn bg-black text-primary-100 text-center button btn w-full"
+                class="mobile-contact-btn site-cta site-cta--primary w-full">
                 <span>Contact</span>
             </a>
         </div>
@@ -166,6 +268,27 @@
 </header>
 
 <script>
+    function updateThemeControls(theme) {
+        document.querySelectorAll('.theme-toggle').forEach(function(button) {
+            var isDark = theme === 'dark';
+            button.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+            button.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        });
+    }
+
+    document.querySelectorAll('.theme-toggle').forEach(function(button) {
+        button.addEventListener('click', function() {
+            var nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+            document.documentElement.dataset.theme = nextTheme;
+            try { sessionStorage.setItem('portfolio-theme', nextTheme); } catch (error) {}
+            updateThemeControls(nextTheme);
+        });
+    });
+    window.addEventListener('portfolio-theme-change', function(event) {
+        updateThemeControls(event.detail.theme);
+    });
+    updateThemeControls(document.documentElement.dataset.theme || 'light');
+
     // Mobile Menu Functions
     function toggleMobileMenu() {
         console.log('Toggle mobile menu');
@@ -247,29 +370,37 @@
         }
     });
 
-</script>        
-        
+</script>
+            
+            
  
-  <section class="p-site hero-title hero-height hero-font bg-gradient-to-b from-white to-gray-100">
+  <h1 class="p-site hero-title hero-height hero-font bg-gradient-to-b from-white to-gray-100">
     Amber Tiles
-</section>
+</h1>
 
+<div class="case-study">
 <div class="flex flex-col lg:flex-row gap-x-4 md:gap-x-4 lg:gap-x-8 sm:gap-y-4 gap-y-6 p-site pt-0 bg-gradient-to-b to-white from-gray-100">
   
     <main class="p-site m-auto w-full lg:w-2/3 shadow-lg rounded-3xl bg-white bg-opacity-90 delay-[100ms] duration-[600ms] taos:translate-y-[2%] taos:opacity-0" data-taos-offset="300">
           <div class="flex-col space-y-12">
         
                 <section class="project-intro mb-8">
-                      <h2 class="mb-4">Bridging Amber Tiles' 40-Year Retail Legacy with Modern E-commerce</h2>
+                                              <p class="project-intro__eyebrow">Ecommerce UX case study</p>
+            <h2 class="mb-4">Bridging Amber Tiles' 40-Year Retail Legacy with Modern E-commerce</h2>
                     
                       <div class="prose prose-lg max-w-none">
-              <p>Amber Tiles’ 40-year retail legacy made them a household name in Australia—but they saw untapped potential in e-commerce. To rival major online players and engage a broader audience, they needed a digital experience as trusted as their stores.</p>
-<p>I led the redesign of their Adobe Commerce platform to turn this vision into a competitive, user-centric reality.</p>
-<h4>Design Approach</h4>
-<p>The challenge? Making Amber Tiles feel like Amber Tiles online. Through Overdose’s phased process—Discovery (user research), Strategy (defining "authenticity"), Design (human-centred flows), and Validation (Launch and Data optimasation)—we built an e-commerce experience that turned their retail heritage into a modern digital store.</p>
-<h4>Design Solutions at a Glance</h4>
-<p>These highlights showcase how we translated Amber’s retail DNA into digital innovations—each solving a specific user or business challenge.
-<img title="Amber%20-%20Solution" alt="Amber%20-%20Solution" src="/user/pages/02.projects/04.amber-tiles/Amber - Solution.jpg?g-a3fae916" /> </p>
+              <p>Amber Tiles had built trust through four decades of showroom service, but its online experience needed to support customers without a staff member there to guide them. The central design question was: <strong>how might we make a complex, location-dependent purchase feel as clear and supported online as it does in store?</strong></p>
+<p>I led UX and UI design within a cross-functional ecommerce team. My work covered the end-to-end customer journey, interaction patterns and reusable interface system, shaped by the practical constraints of local stores, regional pricing and stock availability.</p>
+<p><img alt="Amber Tiles responsive ecommerce experience on laptop and mobile" src="/user/pages/02.projects/04.amber-tiles/Amber - Solution.jpg?g-0d78c6bc" /></p>
+<h4>My role and delivery context</h4>
+<p>The broader Overdose team delivered the Adobe Commerce platform, systems architecture, HarmoniQ ERP integration, analytics, SEO migration and payments. HarmoniQ kept product, order and customer data in sync, while regional storefronts supported Amber’s franchise model. This case study focuses on the UX and UI decisions I contributed within that wider delivery.</p>
+<p>Additional project and delivery context is available in <a href="https://overdose.digital/our-work/amber">Overdose’s Amber overview</a>.</p>
+<h4>What shaped the design</h4>
+<p>Before designing screens, we identified three moments most likely to reduce confidence: prices changing by location, product language that did not match how people planned a room, and forms requesting details before explaining their value. These became practical criteria for the work: establish location early, support different ways of shopping and explain value before asking for commitment.</p>
+<h4>How I approached it</h4>
+<p>I moved from discovery and journey mapping into flow design, reusable components and responsive UI. Each review returned to the same questions: can customers understand their location and availability, can they find a path that matches their intent, and is the next step clear?</p>
+<h4>From insight to interface</h4>
+<p>Four connected decisions show how those principles became part of the experience: regional pricing, navigation for different shopping journeys, a product-focused visual system and forms that explain their value before requesting information.</p>
             </div>
                   </section>
 
@@ -280,28 +411,32 @@
                                                                                                                                                                     
                                           
                                           
-                                                            <div class="content-block grid grid-cols-1 lg:grid-cols-2 gap-8 py-12 items-center lg:grid-flow-col-dense delay-[100ms] duration-[600ms] taos:translate-y-[2%] taos:opacity-0" data-taos-offset="300">
+                                                            <div class="content-block grid grid-cols-1 lg:grid-cols-2 gap-8 py-12 items-center lg:grid-flow-col delay-[100ms] duration-[600ms] taos:translate-y-[2%] taos:opacity-0" data-taos-offset="300">
                               
-                                                  <div class="text-content 
-                                                              lg:order-2
+                                                  <div class="text-content
+                                                              lg:order-1
                               ">
-                                          <h3 class="mb-4 font-medium">1.Location-Aware Pricing Transparency</h3>
-                                                              <div class="prose max-w-none ">
-                        <p>Amber Tiles' franchise model required location-specific pricing and stock levels—but their previous platform couldn't deliver this clarity at scale. To solve this, I designed an intelligent postcode selector that activates on first visit, instantly identifying the user's nearest store and displaying localised pricing with live stock availability from the very first interaction.</p>
-<p>The result eliminated checkout surprises, built trust through radical transparency, and aligned the digital experience with Amber's trusted in-store reliability—turning a complex operational challenge into a competitive advantage.</p>
+                                                                                        <div class="content-highlight-heading">
+                          <span class="content-highlight-number" aria-hidden="true">01</span>
+                          <h3>Location-Aware Pricing Transparency</h3>
+                        </div>
+                                                                                    <div class="prose max-w-none ">
+                        <p>Amber Tiles operates through a franchise network, so pricing and stock availability vary by location. Customers needed to know which store and price region they were browsing before investing time in a product journey.</p>
+<p>I designed an early postcode step that connects the customer to their nearest store, then keeps that regional context visible throughout the experience. Local pricing and availability appear from the start, while the shipping address is checked again at checkout. This makes the system easier to understand and reduces unexpected changes late in the purchase journey.</p>
                       </div>
                                       </div>
                 
-                                                  <div class="media-content 
-                                                              lg:order-1
+                                                  <div class="media-content
+                                                              lg:order-2
                               ">
                     
                                                                                                                 <img 
-                            src="/user/pages/02.projects/04.amber-tiles/Amber - Select-store (1).jpg?g-a3fae916" 
-                            alt="1.Location-Aware Pricing Transparency"
+                            src="/user/pages/02.projects/04.amber-tiles/Amber - Select-store (1).jpg?g-0d78c6bc" 
+                            alt="1. Location-Aware Pricing Transparency"
                             class="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 
                                   "
                             loading="lazy"
+                            decoding="async"
                           >
                                                                                       
                                                             
@@ -314,88 +449,32 @@
                                                                                                                                                                     
                                           
                                           
-                                                            <div class="content-block grid grid-cols-1 lg:grid-cols-2 gap-8 py-12 items-center lg:grid-flow-col delay-[100ms] duration-[600ms] taos:translate-y-[2%] taos:opacity-0" data-taos-offset="300">
+                                                            <div class="content-block grid grid-cols-1 lg:grid-cols-2 gap-8 py-12 items-center lg:grid-flow-col-dense delay-[100ms] duration-[600ms] taos:translate-y-[2%] taos:opacity-0" data-taos-offset="300">
                               
-                                                  <div class="text-content 
-                                                              lg:order-1
+                                                  <div class="text-content
+                                                              lg:order-2
                               ">
-                                          <h3 class="mb-4 font-medium">2. Intuitive Navigation for Diverse Shopping Journeys</h3>
-                                                              <div class="prose max-w-none ">
-                        <p>To support Amber Tiles' shift into competitive e-commerce, I led the redesign of their navigation system—transforming it from a staff-centric structure into one that serves both casual browsers and trade buyers.</p>
-<p>I created dual pathways: room-based categories for customers seeking complete room solutions (with integrated designer booking services), and direct product access for those with specific needs.</p>
-<p>I also integrated Amber Trade functionality—giving members and companies specialised bulk pricing and B2B tools. My design transformed navigation into a growth engine that serves all customer segments while positioning Amber as a full-service digital partner.</p>
+                                                                                        <div class="content-highlight-heading">
+                          <span class="content-highlight-number" aria-hidden="true">02</span>
+                          <h3>Intuitive Navigation for Diverse Shopping Journeys</h3>
+                        </div>
+                                                                                    <div class="prose max-w-none ">
+                        <p>Amber serves people who shop in very different ways. Homeowners may begin with a room or an idea, while trade customers often arrive knowing the product and quantity they need. The previous navigation did not support both behaviours clearly.</p>
+<p>I redesigned the structure around complementary paths: room-led inspiration for customers still exploring, direct product categories for focused shopping, and a distinct Amber Trade route for business services and pricing. Customers can begin with the mental model that feels natural to them without being forced through the same sequence.</p>
                       </div>
                                       </div>
                 
-                                                  <div class="media-content 
-                                                              lg:order-2
+                                                  <div class="media-content
+                                                              lg:order-1
                               ">
                     
                                                                                                                 <img 
-                            src="/user/pages/02.projects/04.amber-tiles/Amber - Navigation.jpg?g-a3fae916" 
+                            src="/user/pages/02.projects/04.amber-tiles/Amber - Navigation.jpg?g-0d78c6bc" 
                             alt="2. Intuitive Navigation for Diverse Shopping Journeys"
                             class="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 
                                   "
                             loading="lazy"
-                          >
-                                                                                      
-                                                            
-                  </div>
-                                
-              </div>
-                                                      
-                                                                                                                              
-                                          
-                                                                                                                                                                    
-                                          
-                                          
-                                                            <div class="content-block grid grid-cols-1 lg:grid-cols-2 gap-8 py-12 items-center lg:grid-flow-col-dense delay-[100ms] duration-[600ms] taos:translate-y-[2%] taos:opacity-0" data-taos-offset="300">
-                              
-                                                  <div class="text-content 
-                                                              lg:order-2
-                              ">
-                                          <h3 class="mb-4 font-medium">3. Product-Focused Visual Design System</h3>
-                                                              <div class="prose max-w-none ">
-                        <p>To transform Amber Tiles' digital presence into a competitive e-commerce experience, I designed a visual system that puts products centre stage. Recognising that tiles and bathroomware are inherently visual purchases, I crafted an earth-toned palette reflecting Amber's brand heritage, generous white space for visual breathing room, and a clean grid layout that makes product photography the hero.</p>
-<p>This approach didn't just create aesthetic consistency—it helped customers visualise products in their own spaces while establishing new design guidelines that ensure brand cohesion across all digital touchpoints.</p>
-                      </div>
-                                      </div>
-                
-                                                  <div class="media-content 
-                                                              lg:order-1
-                              ">
-                    
-                                                                                                                <img 
-                            src="/user/pages/02.projects/04.amber-tiles/Amber - Modern UI.jpg?g-a3fae916" 
-                            alt="3. Product-Focused Visual Design System"
-                            class="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 
-                                  "
-                            loading="lazy"
-                          >
-                                                                                      
-                                                            
-                  </div>
-                                
-              </div>
-                                                      
-                                                                                                                              
-                                          
-                                                                                                                                                                    
-                                          
-                                          
-                                                            <div class="content-block flex justify-center items-center py-12 delay-[100ms] duration-[600ms] taos:translate-y-[2%] taos:opacity-0" data-taos-offset="300">
-                              
-                                
-                                                  <div class="media-content 
-                                                              w-full max-w-4xl
-                              ">
-                    
-                                                                                                                <img 
-                            src="/user/pages/02.projects/04.amber-tiles/book - guidelines@0.3x.jpg?g-a3fae916" 
-                            alt="Content Image"
-                            class="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 
-                                  mx-auto"
-                            loading="lazy"
+                            decoding="async"
                           >
                                                                                       
                                                             
@@ -410,26 +489,94 @@
                                           
                                                             <div class="content-block grid grid-cols-1 lg:grid-cols-2 gap-8 py-12 items-center lg:grid-flow-col delay-[100ms] duration-[600ms] taos:translate-y-[2%] taos:opacity-0" data-taos-offset="300">
                               
-                                                  <div class="text-content 
+                                                  <div class="text-content
                                                               lg:order-1
                               ">
-                                          <h3 class="mb-4 font-medium">4. Value-First Form Architecture</h3>
-                                                              <div class="prose max-w-none ">
-                        <p>To build digital trust equivalent to Amber Tiles' in-store reputation, I re-engineered all user forms around a "value-first" principle. Instead of leading with data requests, I designed flows that demonstrate Amber's benefits upfront—like the Amber Trade registration, which showcases bulk pricing discounts, dedicated account management, priority stock access, and flexible payment terms before asking for user details.</p>
-<p>I applied this approach universally across design consultations and quote requests, ensuring users always understand Amber's value proposition before sharing their information. This strategic sequencing significantly increased form completion rates while positioning Amber as a transparent, customer-centric digital partner.</p>
+                                                                                        <div class="content-highlight-heading">
+                          <span class="content-highlight-number" aria-hidden="true">03</span>
+                          <h3>Product-Focused Visual Design System</h3>
+                        </div>
+                                                                                    <div class="prose max-w-none ">
+                        <p>Tiles and bathroom products are highly visual purchases, so the interface needed to support comparison without competing with the photography. I developed a restrained visual system using Amber's earth-toned palette, clear type hierarchy, generous spacing and a consistent product grid.</p>
+<p>The same rules were translated into responsive components and reusable CMS blocks. This gave customers a more consistent way to scan products and gave the content team a practical framework for publishing new pages without rebuilding each layout from scratch.</p>
                       </div>
                                       </div>
                 
-                                                  <div class="media-content 
+                                                  <div class="media-content
                                                               lg:order-2
                               ">
                     
                                                                                                                 <img 
-                            src="/user/pages/02.projects/04.amber-tiles/20250806101025-Amber - Form.jpg?g-a3fae916" 
+                            src="/user/pages/02.projects/04.amber-tiles/Amber - Modern UI.jpg?g-0d78c6bc" 
+                            alt="3. Product-Focused Visual Design System"
+                            class="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 
+                                  "
+                            loading="lazy"
+                            decoding="async"
+                          >
+                                                                                      
+                                                            
+                  </div>
+                                
+              </div>
+                                                      
+                                                                                                                              
+                                          
+                                                                                                                                                                    
+                                          
+                                          
+                                                            <div class="content-block flex justify-center items-center py-12 delay-[100ms] duration-[600ms] taos:translate-y-[2%] taos:opacity-0" data-taos-offset="300">
+                              
+                                
+                                                  <div class="media-content
+                                                              w-full max-w-4xl
+                              ">
+                    
+                                                                                                                <img 
+                            src="/user/pages/02.projects/04.amber-tiles/book - guidelines@0.3x.jpg?g-0d78c6bc" 
+                            alt="Content Image"
+                            class="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 
+                                  mx-auto"
+                            loading="lazy"
+                            decoding="async"
+                          >
+                                                                                      
+                                                            
+                  </div>
+                                
+              </div>
+                                                      
+                                                                                                                              
+                                          
+                                                                                                                                                                    
+                                          
+                                          
+                                                            <div class="content-block grid grid-cols-1 lg:grid-cols-2 gap-8 py-12 items-center lg:grid-flow-col delay-[100ms] duration-[600ms] taos:translate-y-[2%] taos:opacity-0" data-taos-offset="300">
+                              
+                                                  <div class="text-content
+                                                              lg:order-1
+                              ">
+                                                                                        <div class="content-highlight-heading">
+                          <span class="content-highlight-number" aria-hidden="true">04</span>
+                          <h3>Value-First Form Architecture</h3>
+                        </div>
+                                                                                    <div class="prose max-w-none ">
+                        <p>Several journeys asked customers for personal information before making the benefit of continuing clear. I restructured the forms so each flow first explains what the customer will receive—such as trade pricing, account support or a design consultation—then requests only the information needed for that step.</p>
+<p>This sequence was applied across trade registration, consultation and quote journeys. It creates clearer expectations, reduces uncertainty at the point of commitment and gives the team a consistent pattern to measure and refine after launch.</p>
+                      </div>
+                                      </div>
+                
+                                                  <div class="media-content
+                                                              lg:order-2
+                              ">
+                    
+                                                                                                                <img 
+                            src="/user/pages/02.projects/04.amber-tiles/20250806101025-Amber - Form.jpg?g-0d78c6bc" 
                             alt="4. Value-First Form Architecture"
                             class="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 
                                   "
                             loading="lazy"
+                            decoding="async"
                           >
                                                                                       
                                                             
@@ -445,16 +592,17 @@
                                                             <div class="content-block flex justify-center items-center py-12 delay-[100ms] duration-[600ms] taos:translate-y-[2%] taos:opacity-0" data-taos-offset="300">
                               
                                 
-                                                  <div class="media-content 
+                                                  <div class="media-content
                                                               w-full max-w-4xl
                               ">
                     
                                                                                                                 <img 
-                            src="/user/pages/02.projects/04.amber-tiles/Amber - Design System.jpg?g-a3fae916" 
+                            src="/user/pages/02.projects/04.amber-tiles/Amber - Design System.jpg?g-0d78c6bc" 
                             alt="Content Image"
                             class="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 
                                   mx-auto"
                             loading="lazy"
+                            decoding="async"
                           >
                                                                                       
                                                             
@@ -470,16 +618,17 @@
                                                             <div class="content-block flex justify-center items-center py-12 delay-[100ms] duration-[600ms] taos:translate-y-[2%] taos:opacity-0" data-taos-offset="300">
                               
                                 
-                                                  <div class="media-content 
+                                                  <div class="media-content
                                                               w-full max-w-4xl
                               ">
                     
                                                                                                                 <img 
-                            src="/user/pages/02.projects/04.amber-tiles/Amber - 30.jpg?g-a3fae916" 
+                            src="/user/pages/02.projects/04.amber-tiles/Amber - 30.jpg?g-0d78c6bc" 
                             alt="Content Image"
                             class="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 
                                   mx-auto"
                             loading="lazy"
+                            decoding="async"
                           >
                                                                                       
                                                             
@@ -495,7 +644,7 @@
                                                             <div class="content-block flex justify-center items-center py-12 delay-[100ms] duration-[600ms] taos:translate-y-[2%] taos:opacity-0" data-taos-offset="300">
                               
                                 
-                                                  <div class="media-content 
+                                                  <div class="media-content
                                                               w-full max-w-4xl
                               ">
                     
@@ -508,6 +657,8 @@
                                                   <div class="relative w-full aspect-video rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
                             <iframe 
                               src="https://www.youtube.com/embed/RNR2zEHMlgw?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=RNR2zEHMlgw"
+                              title="Amber Tiles project video"
+                              loading="lazy"
                               class="absolute inset-0 w-full h-full"
                               frameborder="0"
                               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -526,11 +677,11 @@
                                           
                                                             <div class="content-block flex justify-center items-center py-12 delay-[100ms] duration-[600ms] taos:translate-y-[2%] taos:opacity-0" data-taos-offset="300">
                               
-                                                  <div class="text-content 
+                                                  <div class="text-content
                                                               w-full max-w-4xl text-center
                               ">
-                                          <h3 class="mb-4 font-medium">The Result</h3>
-                                                              <div class="prose max-w-none prose-center mx-auto">
+                                                                                        <h3 class="mb-4 font-medium">The Result</h3>
+                                                                                    <div class="prose max-w-none prose-center mx-auto">
                         <p>The redesigned site now stands as a seamless digital extension of Amber Tiles' 40-year retail legacy—delivering the same trust and service customers expect in-store, now at scale. Homeowners planning renovations and trade professionals ordering for clients alike can intuitively discover products tailored to their needs, supported by location-aware pricing that eliminates friction and a streamlined checkout that reduces abandonment.</p>
                       </div>
                                       </div>
@@ -539,218 +690,61 @@
               </div>
                       </section>
         
-                          <section class="project-gallery">
-            <h3 class="mb-6">UI Showcase</h3>
-            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-                                                                                                                                                  
-                                      <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
-                      <img
-                        src="/user/pages/02.projects/04.amber-tiles/Amber - Desktop - Mobile (1).jpg?g-a3fae916"
-                        alt="Amber - Desktop - Mobile (1).jpg"
-                        class="w-full aspect-video object-cover rounded-xl shadow cursor-pointer hover:shadow-lg transition-shadow duration-300"
-                        loading="lazy"
-                        onclick="openModal(0)"
-                      />
-                    </div>
-                                                                                                                                      
-                                      <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
-                      <img
-                        src="/user/pages/02.projects/04.amber-tiles/Amber - Select-store (3).jpg?g-a3fae916"
-                        alt="Amber - Select-store (3).jpg"
-                        class="w-full aspect-video object-cover rounded-xl shadow cursor-pointer hover:shadow-lg transition-shadow duration-300"
-                        loading="lazy"
-                        onclick="openModal(1)"
-                      />
-                    </div>
-                                                                                                                                      
-                                      <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
-                      <img
-                        src="/user/pages/02.projects/04.amber-tiles/Amber - Navegation.jpg?g-a3fae916"
-                        alt="Amber - Navegation.jpg"
-                        class="w-full aspect-video object-cover rounded-xl shadow cursor-pointer hover:shadow-lg transition-shadow duration-300"
-                        loading="lazy"
-                        onclick="openModal(2)"
-                      />
-                    </div>
-                                                                                                                                      
-                                      <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
-                      <img
-                        src="/user/pages/02.projects/04.amber-tiles/Amber - Category - Desktop - Mobile (1).jpg?g-a3fae916"
-                        alt="Amber - Category - Desktop - Mobile (1).jpg"
-                        class="w-full aspect-video object-cover rounded-xl shadow cursor-pointer hover:shadow-lg transition-shadow duration-300"
-                        loading="lazy"
-                        onclick="openModal(3)"
-                      />
-                    </div>
-                                                                                                                                      
-                                      <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
-                      <img
-                        src="/user/pages/02.projects/04.amber-tiles/Amber - Compare (1).jpg?g-a3fae916"
-                        alt="Amber - Compare (1).jpg"
-                        class="w-full aspect-video object-cover rounded-xl shadow cursor-pointer hover:shadow-lg transition-shadow duration-300"
-                        loading="lazy"
-                        onclick="openModal(4)"
-                      />
-                    </div>
-                                                                                                                                      
-                                      <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
-                      <img
-                        src="/user/pages/02.projects/04.amber-tiles/Amber - PDP - Desktop - Mobile (1).jpg?g-a3fae916"
-                        alt="Amber - PDP - Desktop - Mobile (1).jpg"
-                        class="w-full aspect-video object-cover rounded-xl shadow cursor-pointer hover:shadow-lg transition-shadow duration-300"
-                        loading="lazy"
-                        onclick="openModal(5)"
-                      />
-                    </div>
-                                                                                                                                      
-                                      <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
-                      <img
-                        src="/user/pages/02.projects/04.amber-tiles/Amber - PDP QC - Desktop - Mobile (1).jpg?g-a3fae916"
-                        alt="Amber - PDP QC - Desktop - Mobile (1).jpg"
-                        class="w-full aspect-video object-cover rounded-xl shadow cursor-pointer hover:shadow-lg transition-shadow duration-300"
-                        loading="lazy"
-                        onclick="openModal(6)"
-                      />
-                    </div>
-                                                                                                                                      
-                                      <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
-                      <img
-                        src="/user/pages/02.projects/04.amber-tiles/Amber - PDP 2 - Desktop - Mobile.jpg?g-a3fae916"
-                        alt="Amber - PDP 2 - Desktop - Mobile.jpg"
-                        class="w-full aspect-video object-cover rounded-xl shadow cursor-pointer hover:shadow-lg transition-shadow duration-300"
-                        loading="lazy"
-                        onclick="openModal(7)"
-                      />
-                    </div>
-                                                                                                                                      
-                                      <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
-                      <img
-                        src="/user/pages/02.projects/04.amber-tiles/Amber - Multiple pages (1).jpg?g-a3fae916"
-                        alt="Amber - Multiple pages (1).jpg"
-                        class="w-full aspect-video object-cover rounded-xl shadow cursor-pointer hover:shadow-lg transition-shadow duration-300"
-                        loading="lazy"
-                        onclick="openModal(8)"
-                      />
-                    </div>
-                                                                                                                                      
-                                      <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
-                      <img
-                        src="/user/pages/02.projects/04.amber-tiles/Amber - Components - Desktop - Mobile (1).jpg?g-a3fae916"
-                        alt="Amber - Components - Desktop - Mobile (1).jpg"
-                        class="w-full aspect-video object-cover rounded-xl shadow cursor-pointer hover:shadow-lg transition-shadow duration-300"
-                        loading="lazy"
-                        onclick="openModal(9)"
-                      />
-                    </div>
-                                                                                                                                      
-                                      <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
-                      <img
-                        src="/user/pages/02.projects/04.amber-tiles/Amber - Components Colours - Desktop - Mobile (1).jpg?g-a3fae916"
-                        alt="Amber - Components Colours - Desktop - Mobile (1).jpg"
-                        class="w-full aspect-video object-cover rounded-xl shadow cursor-pointer hover:shadow-lg transition-shadow duration-300"
-                        loading="lazy"
-                        onclick="openModal(10)"
-                      />
-                    </div>
-                                                                                                                                      
-                                      <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
-                      <img
-                        src="/user/pages/02.projects/04.amber-tiles/Amber - Typography - Desktop - Mobile (1).jpg?g-a3fae916"
-                        alt="Amber - Typography - Desktop - Mobile (1).jpg"
-                        class="w-full aspect-video object-cover rounded-xl shadow cursor-pointer hover:shadow-lg transition-shadow duration-300"
-                        loading="lazy"
-                        onclick="openModal(11)"
-                      />
-                    </div>
-                                                                                                                                      
-                                      <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
-                      <img
-                        src="/user/pages/02.projects/04.amber-tiles/Amber - Library - Desktop - Mobile.jpg?g-a3fae916"
-                        alt="Amber - Library - Desktop - Mobile.jpg"
-                        class="w-full aspect-video object-cover rounded-xl shadow cursor-pointer hover:shadow-lg transition-shadow duration-300"
-                        loading="lazy"
-                        onclick="openModal(12)"
-                      />
-                    </div>
-                                                                                                                                      
-                                      <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
-                      <img
-                        src="/user/pages/02.projects/04.amber-tiles/Amber - Mobile Showcase.jpg?g-a3fae916"
-                        alt="Amber - Mobile Showcase.jpg"
-                        class="w-full aspect-video object-cover rounded-xl shadow cursor-pointer hover:shadow-lg transition-shadow duration-300"
-                        loading="lazy"
-                        onclick="openModal(13)"
-                      />
-                    </div>
-                                                                                                                                      
-                                      <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
-                      <img
-                        src="/user/pages/02.projects/04.amber-tiles/Amber - Form.jpg?g-a3fae916"
-                        alt="Amber - Form.jpg"
-                        class="w-full aspect-video object-cover rounded-xl shadow cursor-pointer hover:shadow-lg transition-shadow duration-300"
-                        loading="lazy"
-                        onclick="openModal(14)"
-                      />
-                    </div>
-                                                            </div>
-          </section>
-        
       </div>
       </main>
 
-    <aside class="lg:w-1/3 delay-[100ms] duration-[600ms] taos:translate-y-[2%] taos:opacity-0" data-taos-offset="300">
-    <div class="sticky top-4 p-6 rounded-3xl shadow-lg space-y-6 bg-slate-50 bg-opacity-90">
+              <aside class="lg:w-1/3 delay-[100ms] duration-[600ms] taos:translate-y-[2%] taos:opacity-0" data-taos-offset="300">
+    <div class="project-sidebar sticky top-4">
       
-                    <nav>
-          <a href="/" class="inline-flex items-center text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200">
-            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
+                    <nav aria-label="Back to projects">
+          <a href="/projects" class="project-sidebar__back">
+            <span aria-hidden="true">←</span>
             Back to Projects
           </a>
         </nav>
             
-                    <div class="client-info">
+                    <div class="project-sidebar__heading">
+          <p>Project details</p>
           <h2>Amber Tiles</h2>
         </div>
       
-            <div class="project-details space-y-4">
-                  <div class="detail-item">
-            <label class="block text-sm font-medium text-gray-600 mb-1">Role</label>
-            <p class="text-gray-900">UX UI Designer</p>
+            <dl class="project-meta">
+                  <div>
+            <dt>Role</dt>
+            <dd>UX UI Designer</dd>
           </div>
         
-                  <div class="detail-item">
-            <label class="block text-sm font-medium text-gray-600 mb-1">Duration</label>
-            <p class="text-gray-900">5 Weeks</p>
+                  <div>
+            <dt>Duration</dt>
+            <dd>5 Weeks</dd>
           </div>
         
-                  <div class="detail-item">
-            <label class="block text-sm font-medium text-gray-600 mb-1">Year</label>
-            <p class="text-gray-900">2023</p>
+                  <div>
+            <dt>Year</dt>
+            <dd>2023</dd>
           </div>
         
-                  <div class="detail-item">
-            <label class="block text-sm font-medium text-gray-600 mb-1">Deliverable</label>
-            <p class="text-gray-900">Ecommerce</p>
+                  <div>
+            <dt>Deliverable</dt>
+            <dd>Ecommerce</dd>
           </div>
-              </div>
+              </dl>
 
-                    <div class="project-tags">
-          <label class="block text-sm font-medium text-gray-600 mb-2">Tags</label>
-          <div class="flex flex-wrap gap-2">
-                          <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full">
+                    <div class="project-sidebar__tags">
+          <p>Expertise</p>
+          <div>
+                          <span>
                 Ui Case
               </span>
-                          <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full">
+                          <span>
                 Ux Case
               </span>
                       </div>
         </div>
       
-                    <div class="project-action">
+                    <div class="project-sidebar__cta-wrap">
           <a 
-            class="btn btn-lg btn-primary font- bg-black text-white"
+            class="project-sidebar__cta site-cta site-cta--primary"
             href="https://www.ambertiles.com.au" 
             target="_blank"
             rel="noopener noreferrer"
@@ -758,77 +752,225 @@
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
             </svg>
-            Visit Site
+            Visit live site
           </a>
         </div>
+      
+              <nav class="project-sibling-nav" aria-label="More case studies">
+          <p>Explore more work</p>
+          <div>
+                          <a href="/nxp" rel="prev" class="project-sibling-link project-sibling-link--previous">
+                <span>← Previous</span>
+                <strong>NXP</strong>
+              </a>
+                                      <a href="/jaybro-case-study" rel="next" class="project-sibling-link project-sibling-link--next">
+                <span>Next →</span>
+                <strong>Jaybro</strong>
+              </a>
+                      </div>
+        </nav>
           </div>
   </aside>
 </div>
 
+  <section class="p-site pt-0 case-study-section case-study-section--gallery" aria-labelledby="ui-gallery-title">
+    <div class="project-gallery">
+      <div class="project-gallery__heading">
+        <p class="project-gallery__kicker">Interface in context</p>
+        <h2 id="ui-gallery-title">UI Gallery</h2>
+        <p class="project-gallery__lead">Selected screens showing how the experience translates key decisions into a clear, consistent interface.</p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+                                                                                      <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
+                <img src="/user/pages/02.projects/04.amber-tiles/Amber - Desktop - Mobile (1).jpg?g-0d78c6bc" alt="Amber - Desktop - Mobile (1).jpg" class="w-full aspect-video object-cover cursor-pointer transition-opacity duration-300 hover:opacity-90" loading="lazy" decoding="async" data-gallery-index="0">
+              </div>
+                                                                                          <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
+                <img src="/user/pages/02.projects/04.amber-tiles/Amber - Select-store (3).jpg?g-0d78c6bc" alt="Amber - Select-store (3).jpg" class="w-full aspect-video object-cover cursor-pointer transition-opacity duration-300 hover:opacity-90" loading="lazy" decoding="async" data-gallery-index="1">
+              </div>
+                                                                                          <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
+                <img src="/user/pages/02.projects/04.amber-tiles/Amber - Navegation.jpg?g-0d78c6bc" alt="Amber - Navegation.jpg" class="w-full aspect-video object-cover cursor-pointer transition-opacity duration-300 hover:opacity-90" loading="lazy" decoding="async" data-gallery-index="2">
+              </div>
+                                                                                          <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
+                <img src="/user/pages/02.projects/04.amber-tiles/Amber - Category - Desktop - Mobile (1).jpg?g-0d78c6bc" alt="Amber - Category - Desktop - Mobile (1).jpg" class="w-full aspect-video object-cover cursor-pointer transition-opacity duration-300 hover:opacity-90" loading="lazy" decoding="async" data-gallery-index="3">
+              </div>
+                                                                                          <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
+                <img src="/user/pages/02.projects/04.amber-tiles/Amber - Compare (1).jpg?g-0d78c6bc" alt="Amber - Compare (1).jpg" class="w-full aspect-video object-cover cursor-pointer transition-opacity duration-300 hover:opacity-90" loading="lazy" decoding="async" data-gallery-index="4">
+              </div>
+                                                                                          <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
+                <img src="/user/pages/02.projects/04.amber-tiles/Amber - PDP - Desktop - Mobile (1).jpg?g-0d78c6bc" alt="Amber - PDP - Desktop - Mobile (1).jpg" class="w-full aspect-video object-cover cursor-pointer transition-opacity duration-300 hover:opacity-90" loading="lazy" decoding="async" data-gallery-index="5">
+              </div>
+                                                                                          <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
+                <img src="/user/pages/02.projects/04.amber-tiles/Amber - PDP QC - Desktop - Mobile (1).jpg?g-0d78c6bc" alt="Amber - PDP QC - Desktop - Mobile (1).jpg" class="w-full aspect-video object-cover cursor-pointer transition-opacity duration-300 hover:opacity-90" loading="lazy" decoding="async" data-gallery-index="6">
+              </div>
+                                                                                          <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
+                <img src="/user/pages/02.projects/04.amber-tiles/Amber - PDP 2 - Desktop - Mobile.jpg?g-0d78c6bc" alt="Amber - PDP 2 - Desktop - Mobile.jpg" class="w-full aspect-video object-cover cursor-pointer transition-opacity duration-300 hover:opacity-90" loading="lazy" decoding="async" data-gallery-index="7">
+              </div>
+                                                                                          <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
+                <img src="/user/pages/02.projects/04.amber-tiles/Amber - Multiple pages (1).jpg?g-0d78c6bc" alt="Amber - Multiple pages (1).jpg" class="w-full aspect-video object-cover cursor-pointer transition-opacity duration-300 hover:opacity-90" loading="lazy" decoding="async" data-gallery-index="8">
+              </div>
+                                                                                          <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
+                <img src="/user/pages/02.projects/04.amber-tiles/Amber - Components - Desktop - Mobile (1).jpg?g-0d78c6bc" alt="Amber - Components - Desktop - Mobile (1).jpg" class="w-full aspect-video object-cover cursor-pointer transition-opacity duration-300 hover:opacity-90" loading="lazy" decoding="async" data-gallery-index="9">
+              </div>
+                                                                                          <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
+                <img src="/user/pages/02.projects/04.amber-tiles/Amber - Components Colours - Desktop - Mobile (1).jpg?g-0d78c6bc" alt="Amber - Components Colours - Desktop - Mobile (1).jpg" class="w-full aspect-video object-cover cursor-pointer transition-opacity duration-300 hover:opacity-90" loading="lazy" decoding="async" data-gallery-index="10">
+              </div>
+                                                                                          <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
+                <img src="/user/pages/02.projects/04.amber-tiles/Amber - Typography - Desktop - Mobile (1).jpg?g-0d78c6bc" alt="Amber - Typography - Desktop - Mobile (1).jpg" class="w-full aspect-video object-cover cursor-pointer transition-opacity duration-300 hover:opacity-90" loading="lazy" decoding="async" data-gallery-index="11">
+              </div>
+                                                                                          <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
+                <img src="/user/pages/02.projects/04.amber-tiles/Amber - Library - Desktop - Mobile.jpg?g-0d78c6bc" alt="Amber - Library - Desktop - Mobile.jpg" class="w-full aspect-video object-cover cursor-pointer transition-opacity duration-300 hover:opacity-90" loading="lazy" decoding="async" data-gallery-index="12">
+              </div>
+                                                                                          <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
+                <img src="/user/pages/02.projects/04.amber-tiles/Amber - Mobile Showcase.jpg?g-0d78c6bc" alt="Amber - Mobile Showcase.jpg" class="w-full aspect-video object-cover cursor-pointer transition-opacity duration-300 hover:opacity-90" loading="lazy" decoding="async" data-gallery-index="13">
+              </div>
+                                                                                          <div class="gallery-item delay-[300ms] duration-[600ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
+                <img src="/user/pages/02.projects/04.amber-tiles/Amber - Form.jpg?g-0d78c6bc" alt="Amber - Form.jpg" class="w-full aspect-video object-cover cursor-pointer transition-opacity duration-300 hover:opacity-90" loading="lazy" decoding="async" data-gallery-index="14">
+              </div>
+                                    </div>
+    </div>
+  </section>
+  <section class="p-site pt-0 case-study-section case-study-section--outcome" aria-labelledby="outcome-title">
+    <div class="outcome-panel">
+      <div class="outcome-heading">
+        <p class="outcome-kicker">Outcome and evidence</p>
+        <h2 id="outcome-title">What changed</h2>
+        <p class="outcome-lead">A clearer customer journey, a stronger operational foundation, and a system designed to evolve.</p>
+      </div>
+              <div class="outcome-grid">
+                      <article class="outcome-card">
+              <span class="outcome-card__number" aria-hidden="true">01</span>
+              <h3>Regional clarity</h3>
+              <p>Customers establish their local store context early, supporting more accurate regional pricing and availability throughout the journey.</p>
+            </article>
+                      <article class="outcome-card">
+              <span class="outcome-card__number" aria-hidden="true">02</span>
+              <h3>Confident discovery</h3>
+              <p>Room-led inspiration and direct product pathways support both exploratory homeowners and high-intent trade customers.</p>
+            </article>
+                      <article class="outcome-card">
+              <span class="outcome-card__number" aria-hidden="true">03</span>
+              <h3>Scalable delivery</h3>
+              <p>Reusable interface components and CMS blocks give the team a consistent foundation for expanding product and editorial content.</p>
+            </article>
+                  </div>
+                      </div>
+  </section>
   <section class="p-site pt-0">
-    <div class="bg-slate-50 flex flex-col lg:flex-row p-8 gap-x-12 gap-y-8 rounded-3xl shadow-lg delay-[150ms] duration-[300ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
-      
-              <div class="w-full lg:w-1/2">
-          <h2 class="mb-4">Challenges</h2>
-          <div class="prose max-w-none text-gray-700">
-            <ul class="list-disc list-outside ml-0 space-y-3">
-                                                <li class="pl-0">Translate showroom excellence into a first e-commerce presence</li>
-                                                                <li class="pl-0">Solve location-based pricing across franchise networks</li>
-                                                                <li class="pl-0">Create engaging product discovery experiences</li>
-                                                                <li class="pl-0">Enable team content updates without technical dependency</li>
-                                                                <li class="pl-0">Reduce checkout abandonment and improve conversion</li>
-                                                                <li class="pl-0">Establish digital competitiveness against major retailers</li>
-                                          </ul>
-          </div>
-        </div>
-      
-              <div class="w-full lg:w-1/2">
-          <h2 class="mb-4">Solutions</h2>
-          <div class="prose max-w-none text-gray-700">
-            <ul class="list-disc list-outside ml-0 space-y-3">
-                                                <li>Engineer region-aware personalisation with instant pricing/stock visibility</li>
-                                                                <li>Design visual-first product discovery with immersive browsing experiences</li>
-                                                                <li>Integrate seamless B2B portal for trade members and bulk purchasing</li>
-                                                                <li>Optimise conversion-driven checkout with value-first UX principles</li>
-                                                                <li>Engineer confidence-building calculator for precise tile estimation</li>
-                                          </ul>
-          </div>
-        </div>
-          </div>
+    <div class="reasoning-panel delay-[150ms] duration-[300ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
+      <div class="reasoning-heading">
+        <p class="reasoning-kicker">Connecting constraints to decisions</p>
+        <h2>Challenge → Design response</h2>
+        <p>Each response traces back to a customer, operational or platform constraint.</p>
+      </div>
+      <ol class="reasoning-list">
+                              <li class="reasoning-pair">
+              <span class="reasoning-number" aria-hidden="true">01</span>
+              <div class="reasoning-item reasoning-item--challenge"><span>Challenge</span><p>Pricing and stock changed across a decentralised franchise network.</p></div>
+              <span class="reasoning-arrow" aria-hidden="true">→</span>
+              <div class="reasoning-item reasoning-item--response"><span>Design response</span><p>Ask for postcode early, assign the correct regional storefront, keep the selected store visible and validate the shipping region at checkout.</p></div>
+            </li>
+                      <li class="reasoning-pair">
+              <span class="reasoning-number" aria-hidden="true">02</span>
+              <div class="reasoning-item reasoning-item--challenge"><span>Challenge</span><p>Homeowners explored by room and inspiration, while trade customers arrived with specific products and quantities in mind.</p></div>
+              <span class="reasoning-arrow" aria-hidden="true">→</span>
+              <div class="reasoning-item reasoning-item--response"><span>Design response</span><p>Create complementary room-led, product-led and trade pathways so each audience can begin with its own mental model.</p></div>
+            </li>
+                      <li class="reasoning-pair">
+              <span class="reasoning-number" aria-hidden="true">03</span>
+              <div class="reasoning-item reasoning-item--challenge"><span>Challenge</span><p>The online journey needed to carry the confidence and service associated with Amber’s showrooms.</p></div>
+              <span class="reasoning-arrow" aria-hidden="true">→</span>
+              <div class="reasoning-item reasoning-item--response"><span>Design response</span><p>Use visual-first product presentation, clear service prompts and value-led forms that explain the benefit before requesting details.</p></div>
+            </li>
+                      <li class="reasoning-pair">
+              <span class="reasoning-number" aria-hidden="true">04</span>
+              <div class="reasoning-item reasoning-item--challenge"><span>Challenge</span><p>Products, orders and customer information needed to remain consistent between commerce and operational systems.</p></div>
+              <span class="reasoning-arrow" aria-hidden="true">→</span>
+              <div class="reasoning-item reasoning-item--response"><span>Design response</span><p>Work with the delivery team around the Adobe Commerce and HarmoniQ integration, reflecting regional and data constraints in the interface.</p></div>
+            </li>
+                      <li class="reasoning-pair">
+              <span class="reasoning-number" aria-hidden="true">05</span>
+              <div class="reasoning-item reasoning-item--challenge"><span>Challenge</span><p>The internal team needed to publish varied content without breaking design consistency.</p></div>
+              <span class="reasoning-arrow" aria-hidden="true">→</span>
+              <div class="reasoning-item reasoning-item--response"><span>Design response</span><p>Design reusable interface components and CMS blocks for product, service and editorial content.</p></div>
+            </li>
+                      <li class="reasoning-pair">
+              <span class="reasoning-number" aria-hidden="true">06</span>
+              <div class="reasoning-item reasoning-item--challenge"><span>Challenge</span><p>Checkout had to support different payment preferences without adding unnecessary friction.</p></div>
+              <span class="reasoning-arrow" aria-hidden="true">→</span>
+              <div class="reasoning-item reasoning-item--response"><span>Design response</span><p>Create a clear checkout experience around Stripe, Link, cards, mobile wallets and Afterpay.</p></div>
+            </li>
+                        </ol>
+    </div>
+  </section>
+  <section class="p-site pt-0" aria-labelledby="design-process-title">
+    <div class="design-process-panel delay-[150ms] duration-[300ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
+      <div class="design-process-intro">
+        <p class="design-process-kicker">From ambiguity to delivery</p>
+        <h2 id="design-process-title">Design Process</h2>
+        <p class="design-process-summary">The process was not strictly linear. Each stage reduced a different kind of risk and informed the next design decision.</p>
+      </div>
+      <ol class="design-process-grid" aria-label="Design process stages">
+                                                          <li class="design-process-card">
+                <div class="design-process-card__inner">
+                  <span class="design-process-number" aria-hidden="true">01</span>
+                  <div><h3 class="design-process-title">Discovery</h3><p class="design-process-description">Aligned retail, franchise and ecommerce needs through stakeholder workshops and a current-state UX review.</p></div>
+                </div>
+              </li>
+                                                              <li class="design-process-card">
+                <div class="design-process-card__inner">
+                  <span class="design-process-number" aria-hidden="true">02</span>
+                  <div><h3 class="design-process-title">Journey framing</h3><p class="design-process-description">Mapped how homeowners, renovators and trade customers differed in language, confidence, information needs and purchase intent.</p></div>
+                </div>
+              </li>
+                                                              <li class="design-process-card">
+                <div class="design-process-card__inner">
+                  <span class="design-process-number" aria-hidden="true">03</span>
+                  <div><h3 class="design-process-title">Risk prioritisation</h3><p class="design-process-description">Focused first on the journeys most likely to undermine trust: regional assignment, navigation, product discovery, product detail and checkout.</p></div>
+                </div>
+              </li>
+                                                              <li class="design-process-card">
+                <div class="design-process-card__inner">
+                  <span class="design-process-number" aria-hidden="true">04</span>
+                  <div><h3 class="design-process-title">Flow exploration</h3><p class="design-process-description">Compared alternative structures and progressively increased fidelity as key decisions were reviewed with stakeholders and delivery teams.</p></div>
+                </div>
+              </li>
+                                                              <li class="design-process-card">
+                <div class="design-process-card__inner">
+                  <span class="design-process-number" aria-hidden="true">05</span>
+                  <div><h3 class="design-process-title">System design</h3><p class="design-process-description">Turned approved patterns into responsive components and reusable CMS blocks for products, services and editorial content.</p></div>
+                </div>
+              </li>
+                                                              <li class="design-process-card">
+                <div class="design-process-card__inner">
+                  <span class="design-process-number" aria-hidden="true">06</span>
+                  <div><h3 class="design-process-title">Delivery collaboration</h3><p class="design-process-description">Worked with development, architecture, data, analytics and SEO specialists to reconcile customer needs with platform and integration constraints.</p></div>
+                </div>
+              </li>
+                                                              <li class="design-process-card">
+                <div class="design-process-card__inner">
+                  <span class="design-process-number" aria-hidden="true">07</span>
+                  <div><h3 class="design-process-title">Validation plan</h3><p class="design-process-description">Defined post-launch questions for analytics and usability review, including region-selection errors, product discovery, form completion and checkout abandonment.</p></div>
+                </div>
+              </li>
+                                    </ol>
+    </div>
   </section>
 
-<section class="p-site pt-0">
-  <div class="bg-black flex flex-col lg:flex-row p-8 gap-x-12 gap-y-8 rounded-3xl shadow-lg delay-[150ms] duration-[300ms] taos:translate-y-[10%] taos:opacity-0" data-taos-offset="300">
-    <div class="w-full lg:w-1/2">
-      <h2 class="mb-4 text-white">Design Process</h2>
-    </div>
-    <div class="w-full lg:w-1/2">
-      <div class="prose max-w-none">
-        <ul class="text-white list-disc list-outside ml-0 space-y-3">
-                              <li class="text-white/90 text-inherit">Align stakeholders through discovery workshops and UX audits</li>
-                                        <li class="text-white/90 text-inherit">Architect dual user paths for trade and retail audiences</li>
-                                        <li class="text-white/90 text-inherit">Streamline flows with progressive information layering</li>
-                                        <li class="text-white/90 text-inherit">Craft microinteractions for intuitive user feedback</li>
-                                        <li class="text-white/90 text-inherit">Engineer custom UI components within a scalable system</li>
-                          </ul>
-      </div>
-    </div>
-  </div>
-</section>
+</div>
 
  
-  <div id="mediaModal" class="fixed inset-0 bg-black/95 flex items-center justify-center z-50 hidden" onclick="closeModal()">
-  <div class="relative w-full h-full max-w-screen max-h-screen flex items-center justify-center p-4" onclick="event.stopPropagation()">
+  <div id="mediaModal" class="fixed inset-0 bg-black/95 flex items-center justify-center z-50 hidden">
+  <div class="modal-dialog relative w-full h-full max-w-screen max-h-screen flex items-center justify-center p-4">
     
-        <button class="absolute top-4 right-4 text-white/80 hover:text-white text-2xl w-10 h-10 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 transition-all z-10" onclick="closeModal()">
+        <button type="button" data-modal-close class="absolute top-4 right-4 text-white/80 hover:text-white text-2xl w-10 h-10 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 transition-all z-10" aria-label="Close gallery">
       ✕
     </button>
 
-        <button id="prevBtn" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white text-3xl w-12 h-12 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 transition-all z-10" onclick="navigateModal(-1)">
+        <button type="button" id="prevBtn" data-modal-direction="-1" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white text-3xl w-12 h-12 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 transition-all z-10" aria-label="Previous image">
       ‹
     </button>
     
-    <button id="nextBtn" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white text-3xl w-12 h-12 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 transition-all z-10" onclick="navigateModal(1)">
+    <button type="button" id="nextBtn" data-modal-direction="1" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white text-3xl w-12 h-12 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 transition-all z-10" aria-label="Next image">
       ›
     </button>
 
@@ -849,67 +991,77 @@ document.addEventListener('DOMContentLoaded', function() {
   mediaItems = [
                                                              {
           name: 'Amber\u0020\u002D\u0020Desktop\u0020\u002D\u0020Mobile\u0020\u00281\u0029.jpg',
-          url: '/user/pages/02.projects/04.amber-tiles/Amber - Desktop - Mobile (1).jpg?g-a3fae916',
+          url: '/user/pages/02.projects/04.amber-tiles/Amber - Desktop - Mobile (1).jpg?g-0d78c6bc',
           type: 'image'
         },                                                         {
           name: 'Amber\u0020\u002D\u0020Select\u002Dstore\u0020\u00283\u0029.jpg',
-          url: '/user/pages/02.projects/04.amber-tiles/Amber - Select-store (3).jpg?g-a3fae916',
+          url: '/user/pages/02.projects/04.amber-tiles/Amber - Select-store (3).jpg?g-0d78c6bc',
           type: 'image'
         },                                                         {
           name: 'Amber\u0020\u002D\u0020Navegation.jpg',
-          url: '/user/pages/02.projects/04.amber-tiles/Amber - Navegation.jpg?g-a3fae916',
+          url: '/user/pages/02.projects/04.amber-tiles/Amber - Navegation.jpg?g-0d78c6bc',
           type: 'image'
         },                                                         {
           name: 'Amber\u0020\u002D\u0020Category\u0020\u002D\u0020Desktop\u0020\u002D\u0020Mobile\u0020\u00281\u0029.jpg',
-          url: '/user/pages/02.projects/04.amber-tiles/Amber - Category - Desktop - Mobile (1).jpg?g-a3fae916',
+          url: '/user/pages/02.projects/04.amber-tiles/Amber - Category - Desktop - Mobile (1).jpg?g-0d78c6bc',
           type: 'image'
         },                                                         {
           name: 'Amber\u0020\u002D\u0020Compare\u0020\u00281\u0029.jpg',
-          url: '/user/pages/02.projects/04.amber-tiles/Amber - Compare (1).jpg?g-a3fae916',
+          url: '/user/pages/02.projects/04.amber-tiles/Amber - Compare (1).jpg?g-0d78c6bc',
           type: 'image'
         },                                                         {
           name: 'Amber\u0020\u002D\u0020PDP\u0020\u002D\u0020Desktop\u0020\u002D\u0020Mobile\u0020\u00281\u0029.jpg',
-          url: '/user/pages/02.projects/04.amber-tiles/Amber - PDP - Desktop - Mobile (1).jpg?g-a3fae916',
+          url: '/user/pages/02.projects/04.amber-tiles/Amber - PDP - Desktop - Mobile (1).jpg?g-0d78c6bc',
           type: 'image'
         },                                                         {
           name: 'Amber\u0020\u002D\u0020PDP\u0020QC\u0020\u002D\u0020Desktop\u0020\u002D\u0020Mobile\u0020\u00281\u0029.jpg',
-          url: '/user/pages/02.projects/04.amber-tiles/Amber - PDP QC - Desktop - Mobile (1).jpg?g-a3fae916',
+          url: '/user/pages/02.projects/04.amber-tiles/Amber - PDP QC - Desktop - Mobile (1).jpg?g-0d78c6bc',
           type: 'image'
         },                                                         {
           name: 'Amber\u0020\u002D\u0020PDP\u00202\u0020\u002D\u0020Desktop\u0020\u002D\u0020Mobile.jpg',
-          url: '/user/pages/02.projects/04.amber-tiles/Amber - PDP 2 - Desktop - Mobile.jpg?g-a3fae916',
+          url: '/user/pages/02.projects/04.amber-tiles/Amber - PDP 2 - Desktop - Mobile.jpg?g-0d78c6bc',
           type: 'image'
         },                                                         {
           name: 'Amber\u0020\u002D\u0020Multiple\u0020pages\u0020\u00281\u0029.jpg',
-          url: '/user/pages/02.projects/04.amber-tiles/Amber - Multiple pages (1).jpg?g-a3fae916',
+          url: '/user/pages/02.projects/04.amber-tiles/Amber - Multiple pages (1).jpg?g-0d78c6bc',
           type: 'image'
         },                                                         {
           name: 'Amber\u0020\u002D\u0020Components\u0020\u002D\u0020Desktop\u0020\u002D\u0020Mobile\u0020\u00281\u0029.jpg',
-          url: '/user/pages/02.projects/04.amber-tiles/Amber - Components - Desktop - Mobile (1).jpg?g-a3fae916',
+          url: '/user/pages/02.projects/04.amber-tiles/Amber - Components - Desktop - Mobile (1).jpg?g-0d78c6bc',
           type: 'image'
         },                                                         {
           name: 'Amber\u0020\u002D\u0020Components\u0020Colours\u0020\u002D\u0020Desktop\u0020\u002D\u0020Mobile\u0020\u00281\u0029.jpg',
-          url: '/user/pages/02.projects/04.amber-tiles/Amber - Components Colours - Desktop - Mobile (1).jpg?g-a3fae916',
+          url: '/user/pages/02.projects/04.amber-tiles/Amber - Components Colours - Desktop - Mobile (1).jpg?g-0d78c6bc',
           type: 'image'
         },                                                         {
           name: 'Amber\u0020\u002D\u0020Typography\u0020\u002D\u0020Desktop\u0020\u002D\u0020Mobile\u0020\u00281\u0029.jpg',
-          url: '/user/pages/02.projects/04.amber-tiles/Amber - Typography - Desktop - Mobile (1).jpg?g-a3fae916',
+          url: '/user/pages/02.projects/04.amber-tiles/Amber - Typography - Desktop - Mobile (1).jpg?g-0d78c6bc',
           type: 'image'
         },                                                         {
           name: 'Amber\u0020\u002D\u0020Library\u0020\u002D\u0020Desktop\u0020\u002D\u0020Mobile.jpg',
-          url: '/user/pages/02.projects/04.amber-tiles/Amber - Library - Desktop - Mobile.jpg?g-a3fae916',
+          url: '/user/pages/02.projects/04.amber-tiles/Amber - Library - Desktop - Mobile.jpg?g-0d78c6bc',
           type: 'image'
         },                                                         {
           name: 'Amber\u0020\u002D\u0020Mobile\u0020Showcase.jpg',
-          url: '/user/pages/02.projects/04.amber-tiles/Amber - Mobile Showcase.jpg?g-a3fae916',
+          url: '/user/pages/02.projects/04.amber-tiles/Amber - Mobile Showcase.jpg?g-0d78c6bc',
           type: 'image'
         },                                                         {
           name: 'Amber\u0020\u002D\u0020Form.jpg',
-          url: '/user/pages/02.projects/04.amber-tiles/Amber - Form.jpg?g-a3fae916',
+          url: '/user/pages/02.projects/04.amber-tiles/Amber - Form.jpg?g-0d78c6bc',
           type: 'image'
         }            ];
   
   document.getElementById('totalMedia').textContent = mediaItems.length;
+
+  document.querySelectorAll('[data-gallery-index]').forEach(item => {
+    item.addEventListener('click', () => openModal(Number(item.dataset.galleryIndex)));
+  });
+  document.querySelector('[data-modal-close]')?.addEventListener('click', closeModal);
+  document.querySelectorAll('[data-modal-direction]').forEach(button => {
+    button.addEventListener('click', () => navigateModal(Number(button.dataset.modalDirection)));
+  });
+  document.querySelector('.modal-dialog')?.addEventListener('click', event => event.stopPropagation());
+  document.getElementById('mediaModal')?.addEventListener('click', closeModal);
 });
 
 function openModal(index) {
@@ -984,49 +1136,47 @@ document.getElementById('mediaModal').addEventListener('touchend', e => {
 });
 </script>
 
-        <div class="bg-black">
-            
 
-        
-    <section class="mx-0 mb-24 flex-none lg:flex space-y-6 p-site bg-gradient-to-b from-white to-gray-100 rounded-b-3xl">
-      <div class="flex flex-col lg:flex-row w-full space-y-4">
-          <div class="content-center w-56 h-auto space-y-4 px-6  m-auto lg:m">
-                                                    <img 
-                  src="/user/pages/blocks/Luis-Saavedra.png?g-a3fae916"
-                  alt="Luis Saavedra - Digital Product Designer" 
-                  class="transition-transform duration-300 hover:scale-105"
-                  loading="lazy"
-              >
-                        </div>
-          <div class="flex-1 w-full content-center space-y-4 px-6  text-center lg:text-left">
-                        <h2>Luis Saavedra - Digital Product Designer</h2>
-              <p>I’m a Digital Product Designer based in Melbourne, with a focus on crafting functional, intuitive experiences across web and mobile platforms.
+                            <div class="profile-block-stage">
+                    
+    
+  <section class="profile-block" aria-labelledby="profile-title">
+      <div class="profile-block__portrait">
+                              <img
+              src="/user/pages/blocks/Luis-Saavedra-2026.png?g-0d78c6bc"
+              alt="Portrait of Luis Saavedra / Product designer"
+              loading="lazy"
+          >
+                </div>
+
+      <div class="profile-block__intro">
+          <h2 id="profile-title">Luis Saavedra / Product designer</h2>
+          <p>I’m a Digital Product Designer based in Melbourne, with a focus on crafting functional, intuitive experiences across web and mobile platforms.
 I bring ideas to life through user-centered design, blending UX, UI, and front-end to create digital products that are both usable and scalable. I’m passionate about design systems, accessibility, and solving real-world problems through thoughtful design.</p>
-          </div>
       </div>
-      <div class="flex flex-col xl:flex-row flex-auto w-auto ">
-          <h3 class="w-full lg:w-80 content-center leading-7 xl:leading-10 text-center">
-                        Experience Design</br>
-User Interface Design</br>
-Product Design</br>
-          </h3>
-          <h3 class="w-full lg:w-80 content-center leading-7 xl:leading-10 text-center">
-                        Web Design</br>
-Accessibility</br>
-Visual Strategy</br>
-          </h3>  
-      </div>
-  </section>
 
+              <ul class="profile-block__skills" aria-label="Design capabilities">
+                      <li>Experience Design</li>
+                      <li>User Interface Design</li>
+                      <li>Product Design</li>
+                      <li>Web Design</li>
+                      <li>Accessibility</li>
+                      <li>Visual Strategy</li>
+                  </ul>
+        </section>
+                </div>
+                    </div>
+
+        <div class="site-footer-reveal bg-black">
                             <footer class="flex flex-col flex-auto p-site">
-    <div class="flex flex-col lg:flex-row flex-auto">
-        <div class="text-white flex-col flex-auto content-center text-center lg:text-left">
+    <div class="footer-primary flex flex-col lg:flex-row flex-auto">
+        <div class="footer-intro text-white flex-col flex-auto content-center text-center lg:text-left">
             <h2 class="text-white mb-4">Let’s build digital solutions that work.</h2>
             <p class="font-light pb-6 lg:pb-16 pt-0">Let's discuss how I can help bring your next digital project to life.</p>
         </div>
-        <div class="text-white flex-col flex lg:flex-row p-6 content-center">
-            <div class="content-center m-auto flex-col flex lg:flex-row gap-y-4 space-x-4">
-                <a href="/projects" class="button button-p bg-primary-100 text-black transition-transform duration-200 hover:scale-105">
+        <div class="footer-cta-panel text-white flex-col flex lg:flex-row p-6 content-center">
+            <div class="footer-cta-group content-center m-auto flex-col flex lg:flex-row gap-y-4 space-x-4">
+                <a href="/projects" class="site-cta site-cta--inverse">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
                         <path d="M5 12h14"/><path d="M12 5v14"/>
                     </svg>
@@ -1035,7 +1185,7 @@ Visual Strategy</br>
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
                     </svg>
                 </a>
-                <a href="/contact" class="button button-p border solid border-white text-white transition-transform duration-200 hover:scale-105">
+                <a href="/contact" class="site-cta site-cta--inverse">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
                         <path d="M3.714 3.048a.498.498 0 0 0-.683.627l2.843 7.627a2 2 0 0 1 0 1.396l-2.842 7.627a.498.498 0 0 0 .682.627l18-8.5a.5.5 0 0 0 0-.904z"/><path d="M6 12h16"/>
                     </svg>
@@ -1053,13 +1203,25 @@ Visual Strategy</br>
             <a href="/contact" 
                 class="btn px-2 py-2 inline-block">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"/><path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"/><path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"/><path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"/><path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"/> />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5zM12 2h3.5a3.5 3.5 0 1 1 0 7H12V2zM12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0zM5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0zM5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z" />
                 </svg>
             </a>
-            <a href="/contact" 
-                class="btn px-2 py-2 inline-block">
+            <a href="https://www.linkedin.com/in/luis-g-saavedra/"
+                class="btn px-2 py-2 inline-block"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Luis Saavedra on LinkedIn">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2" />
+                </svg>
+            </a>
+            <a href="https://github.com/Lugasamo"
+                class="btn px-2 py-2 inline-block"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Luis Saavedra on GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.59 2 12.253c0 4.53 2.865 8.374 6.839 9.73.5.095.682-.223.682-.494 0-.244-.009-.889-.014-1.744-2.782.62-3.369-1.375-3.369-1.375-.455-1.184-1.11-1.499-1.11-1.499-.908-.637.069-.624.069-.624 1.004.073 1.532 1.058 1.532 1.058.892 1.568 2.341 1.115 2.91.852.091-.663.349-1.115.635-1.371-2.221-.259-4.555-1.14-4.555-5.07 0-1.12.39-2.036 1.029-2.754-.103-.26-.446-1.304.098-2.716 0 0 .84-.276 2.75 1.052A9.3 9.3 0 0 1 12 6.973a9.3 9.3 0 0 1 2.504.345c1.909-1.328 2.748-1.052 2.748-1.052.546 1.412.203 2.456.1 2.716.64.718 1.027 1.634 1.027 2.754 0 3.94-2.338 4.808-4.566 5.062.359.318.678.946.678 1.907 0 1.376-.012 2.486-.012 2.824 0 .274.18.594.688.493C19.138 20.623 22 16.78 22 12.253 22 6.59 17.523 2 12 2Z" clip-rule="evenodd"/>
                 </svg>
             </a>
         </div>

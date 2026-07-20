@@ -1,7 +1,0 @@
-@import 'variables.css';
-@import '/components/buttons.css';
-
-/* portfolio-luis/css/input.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
