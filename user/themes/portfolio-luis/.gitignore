@@ -2,3 +2,4 @@ node_modules
 images/logo/
 css/output.css
 css/output.min.css
+!css/output.css
