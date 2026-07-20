@@ -1,0 +1,239 @@
+title: Project
+'@extends':
+  type: default
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        content:
+          type: tab
+          title: Content
+          fields:
+            header.title:
+              type: text
+              label: Project Title
+              placeholder: e.g., Learnit
+              validate:
+                required: true
+
+            header.hero_title:
+              type: text
+              label: Hero Title
+              placeholder: e.g., Featured Project Title
+              help: Optional title for hero section
+
+            header.content_blocks:
+              type: list
+              label: Content Blocks
+              collapsed: true
+              btnLabel: Add Block
+              fields:
+                .title:
+                  type: text
+                  label: Block Title
+                  placeholder: e.g., Key Features
+                  
+                .content:
+                  type: markdown
+                  label: Content
+                  
+                .media_type:
+                  type: select
+                  label: Media Type
+                  options:
+                    image: Image
+                    video: Video
+                    none: Text Only
+                  default: image
+                  
+                .image:
+                  type: file
+                  label: Block Image
+                  multiple: false
+                  destination: 'self@'
+                  random_name: false
+                  avoid_overwriting: false
+                  accept:
+                    - 'image/*'
+                  filesize: 30
+                  validate:
+                    required: false
+                  toggleable: true
+                  
+                .video:
+                  type: file
+                  label: Block Video
+                  multiple: false
+                  destination: 'self@'
+                  random_name: false
+                  avoid_overwriting: false
+                  accept:
+                    - 'video/*'
+                  filesize: 100
+                  validate:
+                    required: false
+                  toggleable: true
+                  
+                .video_url:
+                  type: url
+                  label: Video URL (YouTube/Vimeo)
+                  placeholder: https://www.youtube.com/watch?v=... or https://vimeo.com/...
+                  help: Alternative to uploading video file - paste YouTube or Vimeo URL
+                  toggleable: true
+                  
+                .video_poster:
+                  type: file
+                  label: Video Poster Image
+                  multiple: false
+                  destination: 'self@'
+                  random_name: false
+                  avoid_overwriting: false
+                  accept:
+                    - 'image/*'
+                  filesize: 10
+                  validate:
+                    required: false
+                  help: Thumbnail image shown before video plays
+                  toggleable: true
+                  
+                .video_autoplay:
+                  type: toggle
+                  label: Auto Play Video
+                  help: Video will start playing automatically (muted for better browser compatibility)
+                  highlight: 1
+                  default: 0
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                  validate:
+                    type: bool
+                  
+                .video_loop:
+                  type: toggle
+                  label: Loop Video
+                  help: Video will restart when it reaches the end
+                  highlight: 1
+                  default: 0
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                  validate:
+                    type: bool
+                  
+                .video_muted:
+                  type: toggle
+                  label: Start Muted
+                  help: Video will start without sound (required for autoplay in most browsers)
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                  validate:
+                    type: bool
+
+                .video_controls:
+                  type: toggle
+                  label: Show Video Controls
+                  help: Display video playback controls
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                  validate:
+                    type: bool
+                    
+                .text_position:
+                  type: select
+                  label: Text Position
+                  options:
+                    auto: Automatic (Alternating)
+                    left: Left
+                    right: Right
+                  default: auto
+
+            header.project_media:
+              type: file
+              label: Project Gallery
+              multiple: true
+              destination: 'self@'
+              accept:
+                - 'image/*'
+                - 'video/*'
+              filesize: 30
+              help: Additional images and videos for the project gallery
+              
+            # Project Details Section
+            header.project_type:
+              type: select
+              label: Project Type
+              options:
+                'web-design': 'Web Design'
+                'mobile-app': 'Mobile App'
+                'ecommerce': 'Ecommerce'
+                'ux-ui-design': 'UX UI Case'
+              validate:
+                required: true
+            
+            header.client:
+              type: text
+              label: Client
+              placeholder: e.g., Amber Tiles
+              
+            header.role:
+              type: text
+              label: Role
+              placeholder: e.g., Lead Designer, Developer
+              
+            header.duration:
+              type: text
+              label: Duration
+              placeholder: e.g., 3 months, 2 weeks
+            
+            header.year:
+              type: text
+              label: Year
+              placeholder: e.g., 2024
+            
+            header.project_url:
+              type: url
+              label: Project URL
+              placeholder: https://example.com
+              
+            header.tags:
+              type: selectize
+              label: Tags
+              help: Add relevant tags for this project
+              validate:
+                type: commalist
+
+            header.challenge:
+              type: textarea
+              label: Challenge
+              placeholder: Describe the main challenges (one per line)
+              help: List each challenge on a separate line
+              rows: 6
+            
+            header.solution:
+              type: textarea
+              label: Solution
+              placeholder: Describe the solutions (one per line)
+              help: List each solution on a separate line
+              rows: 6
+
+            header.design_process:
+              type: textarea
+              label: Design Process
+              placeholder: Describe the design process steps (one per line)
+              help: List each process step on a separate line
+              rows: 6
+            
+            content:
+              type: editor
+              label: Project Description
+              size: large
+              help: Detailed description of the project (supports Markdown)

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html "{{ grav.language.getActive ?: site.default_lang ?: 'en' }}">
+    <head>
+        {% block head %}
+            <meta charset="utf-8" />
+
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="apple-mobile-web-app-capable" content="yes">
+            <meta name="mobile-web-app-capable" content="yes">
+            <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+            <!-- templates/assets -->
+            <link rel="apple-touch-icon" href="{{ url('theme://templates/assets/icon-192x192.png') }}">
+            <link rel="icon" type="image/png" sizes="32x32" href="{{ url('theme://templates/assets/favicon-32x32.png') }}">
+            <link rel="icon" type="image/png" sizes="16x16" href="{{ url('theme://templates/assets/favicon-16x16.png') }}">
+            <link rel="apple-touch-icon" sizes="180x180" href="{{ url('theme://templates/assets/apple-touch-icon.png') }}">
+
+            <title>{% if page.title %}{{ page.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+
+            <link rel="canonical" href="{{ page.url(true, true) }}" />
+            <link rel="preload" href="{{ base_url }}/user/themes/portfolio-luis/fonts/SCHABO-Condensed.woff2" as="font" type="font/woff2" crossorigin>
+            <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Barlow:wght@600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+            <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Barlow:wght@600;700;800&display=swap"></noscript>
+	{# Stylesheets #}
+            {% block stylesheets %}
+            {# Tailwind CSS output - main stylesheet #}
+            <link href="{{ url('theme://css/output.css') }}" rel="stylesheet">
+            {% endblock %}
+            {% include 'partials/metadata.html.twig' %}
+            <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+        {% endblock head %}
+    </head>
+    <body class="delay-[50ms] duration-[1000ms] taos:opacity-0">
+        {# Skip to content for accessibility #}
+        <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary-50 text-white px-4 py-2 rounded-md z-50">Skip to main content</a>
+
+        {% block header %}
+            {% include 'partials/header.html.twig' %}
+        {% endblock %}
+
+        {% block content %}
+        {% endblock %}
+
+        <div class="bg-black">
+            {% include 'partials/profile-block.html.twig' %}
+
+            {% block footer %}
+                {% include 'partials/footer.html.twig' %}
+            {% endblock %}
+        </div>
+
+        <script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
+    </body>
+</html>

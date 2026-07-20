@@ -1,0 +1,38 @@
+/* Button components */
+
+.btn {
+  @apply inline-flex items-center px-8 py-4 space-x-4 inline-block rounded-full font-semibold no-underline cursor-pointer border-none text-base ease-in-out transition-all duration-300;
+}
+
+.btn-sm {
+  @apply text-sm px-4 py-2;
+}
+
+.btn-lg {
+  @apply text-lg px-8 py-4;
+}
+
+.btn-xl {
+  @apply text-xl px-9 py-5;
+}
+
+.btn-primary { 
+  @apply text-black hover:text-primary-100;
+}
+
+.btn-primary:hover { 
+  @apply -translate-y-1 shadow-lg;
+}
+
+.btn-outline { 
+  @apply bg-transparent text-white;
+}
+.btn-outline:hover { 
+    @apply bg-transparent text-black border-solid border-black/50;
+}
+.btn-ghost {
+  @apply bg-transparent text-primary-50 border-solid border-primary-50;
+}
+.btn-ghost:hover { 
+  @apply bg-transparent text-black border-solid  border-black;
+}

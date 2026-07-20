@@ -1,0 +1,63 @@
+{% extends 'partials/base.html.twig' %}
+{% block head %}
+    {{ parent() }}
+    
+    {# Page-specific meta tags #}
+    {% if page.header.description %}
+        <meta name="description" content="{{ page.header.description|e('html_attr') }}">
+    {% endif %}
+    
+    {% if page.header.keywords %}
+        <meta name="keywords" content="{{ page.header.keywords|e('html_attr') }}">
+    {% endif %}
+    
+    {# Open Graph meta tags for social sharing #}
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ page.title|e('html_attr') }} | {{ site.title|e('html_attr') }}">
+    <meta property="og:description" content="{{ page.header.description ?: site.metadata.description|e('html_attr') }}">
+    <meta property="og:url" content="{{ page.url(true, true) }}">
+    {% if page.header.hero_image %}
+        <meta property="og:image" content="{{ url(page.media[page.header.hero_image].url, true) }}">
+    {% endif %}
+    
+    {# Twitter Card meta tags #}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title|e('html_attr') }} | {{ site.title|e('html_attr') }}">
+    <meta name="twitter:description" content="{{ page.header.description ?: site.metadata.description|e('html_attr') }}">
+    {% if page.header.hero_image %}
+        <meta name="twitter:image" content="{{ url(page.media[page.header.hero_image].url, true) }}">
+    {% endif %}
+    
+    {# Structured data for better SEO #}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": {{ page.title|json_encode|raw }},
+        "description": {{ (page.header.description ?: site.metadata.description)|json_encode|raw }},
+        "url": "{{ page.url(true, true) }}",
+        "mainEntity": {
+            "@type": "Person",
+            "name": {{ site.author.name|json_encode|raw }},
+            "jobTitle": "UI/UX Designer",
+            "url": "{{ base_url_absolute }}"
+        }
+    }
+    </script>
+{% endblock %}
+
+{% block content %}
+
+    {% if page.header.title %}
+        {% include 'partials/hero.html.twig' %}
+    {% endif %}
+
+    {% if page.header.intro %}
+        {{ page.header.intro }}
+    {% endif %}
+
+    {% if page.content %}
+        {{ page.content|raw }}
+    {% endif %}
+    
+{% endblock %}  
